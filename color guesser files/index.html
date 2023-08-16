@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+
+		<script src="main.js" defer></script>
+		<script src="settings.js" defer></script>
+		<script src="title.js" defer></script>
+		<script src="test.js" defer></script>
+
+		<title>Color Guesser</title>
+		<link rel="icon" href="img/Guess color icon.png" />
+	</head>
+	<body>
+		<!--------------------------------------------------------------------------------------->
+
+		<header>
+			<span class="title">G</span><span class="title">u</span
+			><span class="title">e</span><span class="title">s</span
+			><span class="title">s</span><span class="title">C</span
+			><span class="title">o</span><span class="title">l</span
+			><span class="title">o</span><span class="title">r</span>
+		</header>
+		<div class="autor">
+			<h1 class="title">by</h1>
+			<h1 class="title">@Kubicjusz</h1>
+			<!-- zrobione przez kubicjusza -->
+		</div>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="section1">
+			<span class="rgb-value">Generate Colors</span>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="score">
+			<div class="score-box">
+				<ul>
+					<p>Score: <span class="score-text">0</span></p>
+					<p>Best score: <span class="score-best">0</span></p>
+				</ul>
+			</div>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="section2">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="section3">
+			<button class="generate">Generuj</button>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<div class="settings-btn">
+			<button class="openSettingsBtn">
+				<img src="img/settingsicon.png" />
+			</button>
+		</div>
+
+		<section class="settings">
+			<h1>Settings</h1>
+			<button class="closeSettingsBtn">X</button>
+
+			<label>Cols</label>
+			<input class="cols" type="range" min="1" max="10" />
+			<span class="colsn">1</span>
+
+			<br />
+			<label>Rows</label>
+			<input class="rows" type="range" min="1" max="10" />
+			<span class="rowsn">1</span>
+
+			<br />
+			<button class="submit">Submit</button>
+
+			<br />
+			<label>Background color</label>
+			<select class="bgcolor">
+				<option value="black">Black</option>
+				<option value="white">White</option>
+				<option value="gray">Gray</option>
+				<option value="changebg">Special</option>
+			</select>
+			<br />
+
+			<br />
+			<label>Difficulty:</label>
+			<select class="difficulty">
+				<option value="easy">Easy</option>
+				<option value="medium">Medium</option>
+				<option value="hard">Hard</option>
+				<option value="very-hard">Very hard</option>
+			</select>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+	</body>
+</html>

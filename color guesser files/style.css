@@ -1,0 +1,181 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #a8d9de;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5em;
+}
+header > span {
+	-webkit-text-stroke: 2px white;
+}
+
+.autor {
+	display: flex;
+	justify-content: center;
+}
+.autor > h1 {
+	font-size: 1.5em;
+}
+
+@media (max-width: 500px) {
+	header {
+		font-size: 3em;
+	}
+}
+
+.section1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rgb-value {
+	font-size: 2em;
+	font-weight: 700;
+	padding: 10px;
+	color: white;
+	background: black;
+	border: 5px solid white;
+}
+@media (max-width: 500px) {
+	.rgb-value {
+		font-size: 1.25em;
+	}
+}
+
+.score-box {
+	position: absolute;
+	border: 5px solid white;
+	background-color: black;
+	color: white;
+	padding: 25px 20px;
+	right: 0;
+	top: 0;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.score-best {
+	font-size: 0.75em;
+}
+@media (max-width: 1000px) {
+	.score-box {
+		position: inherit;
+		border: none;
+		background: none;
+		font-size: 1.5em;
+		width: 50%;
+		padding: 0;
+		width: 100%;
+	}
+	.score {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.section2 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	margin: 25px;
+}
+.box {
+	height: 350px;
+	border: solid 3px black;
+	color: black;
+	cursor: pointer;
+	transition: 0.25s;
+	background-color: white;
+}
+.box:hover {
+	transform: scale(0.98);
+}
+
+.section3 {
+	margin: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+button {
+	width: 175px;
+	height: 50px;
+	font-size: 1.5em;
+	background-color: white;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+button:active {
+	transform: scale(0.98);
+}
+
+.openSettingsBtn {
+	position: absolute;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.openSettingsBtn > img {
+	position: relative;
+	width: 25px;
+	height: 25px;
+}
+.closeSettingsBtn {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 2em;
+	font-weight: 800;
+}
+.settings {
+	position: absolute;
+	width: 300px;
+	left: -300px;
+	top: 0;
+	transition: 0.25s;
+	background-image: url(img/woodbg.png);
+	height: 100vh;
+	color: white;
+	border: 3px #231709 solid;
+}
+.settings > h1 {
+	font-size: 2em;
+}
+.settings > input[type="range"] {
+	width: 150px;
+}
+.settings > input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+}
+.settings > input[type="text"] {
+	width: 100px;
+	height: 25px;
+	font-size: 1em;
+}
+.settings > select {
+	width: 150px;
+	height: 25px;
+	font-size: 1em;
+}
+.settings > label,
+.settings > span {
+	font-size: 1.5em;
+}
