@@ -120,20 +120,30 @@ button:active {
 	transform: scale(0.98);
 }
 
-.openSettingsBtn {
-	position: absolute;
-	top: 0;
-	width: 50px;
-	height: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 .openSettingsBtn > img {
 	position: relative;
 	width: 25px;
 	height: 25px;
 }
+@media (min-width: 600px) {
+	.openSettingsBtn {
+		position: absolute;
+		top: 0;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+@media (max-width: 600px) {
+	.openSettingsBtn {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+	}
+}
+
 .closeSettingsBtn {
 	width: 50px;
 	height: 50px;

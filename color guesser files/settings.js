@@ -11,13 +11,12 @@ const section2 = document.querySelector(".section2");
 
 const bgcolor = document.querySelector(".bgcolor");
 
-let x = 1;
-let y = 1;
+let col_input = 1;
+let row_input = 1;
 
 const openSettings = () => {
 	openSettingsBtn.style.left = "-300px";
 	settings.style.left = "0px";
-
 	settings.style.height = `${document.documentElement.scrollHeight}px`;
 };
 const closeSettings = () => {
@@ -35,20 +34,23 @@ rowInput.addEventListener("input", (el) => {
 });
 
 const submitFunction = () => {
-	y = rowInput.value;
-	x = colInput.value;
-	if (x != 1 || y != 1) {
+	row_input = rowInput.value;
+	col_input = colInput.value;
+	if (col_input != 1 || row_input != 1) {
 		const boxe = document.querySelectorAll(".box");
 		boxe.forEach((el) => {
 			el.remove();
 		});
-		section2.style.setProperty("grid-template-columns", `repeat(${x},1fr)`);
-		for (let i = 1; i < x * y + 1; i++) {
+		section2.style.setProperty(
+			"grid-template-columns",
+			`repeat(${col_input},1fr)`
+		);
+		for (let i = 1; i < col_input * row_input + 1; i++) {
 			const newBox = document.createElement("div");
 			newBox.classList.add("box");
 			section2.appendChild(newBox);
 			newBox.style.height =
-				(window.innerHeight * 0.7 - 10 * y) / y + "px";
+				(window.innerHeight * 0.7 - 10 * row_input) / row_input + "px";
 		}
 	}
 };

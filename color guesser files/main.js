@@ -12,7 +12,7 @@ let best = 0;
 let goal;
 let difficultyValue = difficulty.value;
 
-const p = (e) => {
+const check_box = (e) => {
 	const elementColor = e.target.style.backgroundColor
 		.replace(/[^\d,]/g, "")
 		.split(","); //zamienia wartość rgb(123,123,123) na [ "123", "123", "123"]
@@ -27,7 +27,7 @@ const p = (e) => {
 			body.style.backgroundColor = e.target.style.backgroundColor;
 		}
 
-		g();
+		generate_new_game();
 	} else {
 		e.target.style.opacity = "0";
 		e.target.style.pointerEvents = "none";
@@ -40,7 +40,7 @@ const p = (e) => {
 	}
 };
 
-const g = () => {
+const generate_new_game = () => {
 	colorList.splice(0, colorList.length);
 	const box = document.querySelectorAll(".box");
 	const randVal = Math.floor(Math.random() * 3);
@@ -89,7 +89,7 @@ const g = () => {
 
 		colorList.push(rgb);
 
-		el.addEventListener("click", p);
+		el.addEventListener("click", check_box);
 	});
 
 	goal = colorList[Math.floor(Math.random() * colorList.length)];
@@ -104,7 +104,7 @@ generate.addEventListener("click", () => {
 	}
 });
 
-generate.addEventListener("click", g);
+generate.addEventListener("click", generate_new_game);
 
 difficulty.addEventListener("change", (e) => {
 	difficultyValue = e.target.value;
