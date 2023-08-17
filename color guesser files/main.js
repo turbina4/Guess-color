@@ -41,7 +41,7 @@ const p = (e) => {
 };
 
 const g = () => {
-	colorList.splice(0, colorList.length); //usuwa wszystko z listy
+	colorList.splice(0, colorList.length);
 	const box = document.querySelectorAll(".box");
 	const randVal = Math.floor(Math.random() * 3);
 	const randVal255 = Math.floor(Math.random() * 255);
@@ -95,7 +95,6 @@ const g = () => {
 	goal = colorList[Math.floor(Math.random() * colorList.length)];
 
 	text.innerHTML = `RGB: ${goal}`;
-	console.log(colorList);
 };
 
 generate.addEventListener("click", () => {
