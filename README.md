@@ -1,9 +1,9 @@
-# Guess Color Game (work in progress)
+# Guess the Color Game (work in progress)
 
-## How does game work?
+## How does the game work?
 
-You get random RGB value (e.g. `RGB(163,69,231)`) then you need to select box with correct background color.
+You will be presented with a random RGB value (for example, `RGB(163, 69, 231)`), and your task is to select the box with the corresponding background color.
 
 ## Disclaimer
 
-If you change resolution or size of your window you should generate new boxes
+Please note that if you change the resolution or size of your window, you will need to generate new boxes.
