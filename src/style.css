@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,13 +8,14 @@
 
 body {
 	background: #a8d9de;
+	font-family: "Poppins", sans-serif;
 }
 
 header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 5em;
+	font-size: 4rem;
 }
 header > span {
 	-webkit-text-stroke: 2px white;
@@ -22,13 +25,21 @@ header > span {
 	display: flex;
 	justify-content: center;
 }
-.autor > h1 {
-	font-size: 1.5em;
+.autor h3 {
+	font-size: 1.15rem;
+}
+.autor h3 a {
+	text-decoration: none;
+	cursor: pointer;
+	transition: text-decoration 0.25s;
+}
+.autor h3 a:hover {
+	text-decoration: underline white;
 }
 
 @media (max-width: 500px) {
 	header {
-		font-size: 3em;
+		font-size: 3rem;
 	}
 }
 
@@ -38,16 +49,16 @@ header > span {
 	align-items: center;
 }
 .rgb-value {
-	font-size: 2em;
-	font-weight: 700;
-	padding: 10px;
+	font-size: 1.5rem;
+	font-weight: 900;
+	padding: 0.75rem;
 	color: white;
 	background: black;
 	border: 5px solid white;
 }
 @media (max-width: 500px) {
 	.rgb-value {
-		font-size: 1.25em;
+		font-size: 1.25rem;
 	}
 }
 
@@ -56,7 +67,7 @@ header > span {
 	border: 5px solid white;
 	background-color: black;
 	color: white;
-	padding: 25px 20px;
+	padding: 1rem 1.5rem;
 	right: 0;
 	top: 0;
 	display: flex;
@@ -64,14 +75,14 @@ header > span {
 	align-items: center;
 }
 .score-best {
-	font-size: 0.75em;
+	font-size: 1rem;
 }
 @media (max-width: 1000px) {
 	.score-box {
 		position: inherit;
 		border: none;
 		background: none;
-		font-size: 1.5em;
+		font-size: 1.5rem;
 		width: 50%;
 		padding: 0;
 		width: 100%;
@@ -102,28 +113,46 @@ header > span {
 }
 
 .section3 {
-	margin: 25px;
+	margin: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-button {
-	width: 175px;
-	height: 50px;
-	font-size: 1.5em;
+.generate {
+	width: 10rem;
+	height: 3rem;
+	font-size: 1.5rem;
 	background-color: white;
 	border-radius: 10px;
 	cursor: pointer;
-	transition: 0.25s;
+	border: 2px solid black;
+	font-weight: 700;
+	box-shadow: 0 0 15px white;
+	transition: transform 0.25s, box-shadow 0.25s;
 }
-button:active {
+.generate:hover {
 	transform: scale(0.98);
+	box-shadow: 0 0 25px green;
 }
-
-.openSettingsBtn > img {
-	position: relative;
-	width: 25px;
-	height: 25px;
+.openSettingsBtn,
+.closeSettingsBtn,
+.submit {
+	font-size: 1.5rem;
+	background-color: white;
+	border-radius: 10px;
+	border: 2px solid black;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.submit {
+	padding: 0.25rem 1rem;
+}
+.openSettingsBtn > img,
+.closeSettingsBtn > img {
+	width: 60%;
+	height: 60%;
 }
 @media (min-width: 600px) {
 	.openSettingsBtn {
@@ -150,8 +179,6 @@ button:active {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 2em;
-	font-weight: 800;
 }
 .settings {
 	position: absolute;
@@ -163,28 +190,42 @@ button:active {
 	height: 100vh;
 	color: white;
 	border: 3px #231709 solid;
+	display: flex;
+	flex-direction: column;
 }
-.settings > h1 {
-	font-size: 2em;
+.settings .container {
+	padding: 0.5rem 0.25rem;
+	margin: 0 0.25rem;
 }
-.settings > input[type="range"] {
-	width: 150px;
+.container-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.settings > input[type="checkbox"] {
-	width: 20px;
-	height: 20px;
+.container table {
+	width: 100%;
 }
-.settings > input[type="text"] {
-	width: 100px;
-	height: 25px;
-	font-size: 1em;
+.container td:nth-child(3) {
+	width: 1.75rem;
+	text-align: center;
 }
-.settings > select {
-	width: 150px;
-	height: 25px;
-	font-size: 1em;
+.settings h3 {
+	font-size: 2rem;
 }
-.settings > label,
-.settings > span {
-	font-size: 1.5em;
+.settings input[type="range"] {
+	width: 100%;
+}
+.settings input[type="checkbox"] {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.settings select {
+	width: 60%;
+	height: 2rem;
+	font-size: 1rem;
+	font-weight: 700;
+}
+.settings label,
+.settings span {
+	font-size: 1.5rem;
 }

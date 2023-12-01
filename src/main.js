@@ -13,15 +13,9 @@ let goal;
 let difficultyValue = difficulty.value;
 
 const check_box = (e) => {
-	const elementColor = e.target.style.backgroundColor
-		.replace(/[^\d,]/g, "")
-		.split(","); //zamienia wartość rgb(123,123,123) na [ "123", "123", "123"]
+	const elementColor = e.target.style.backgroundColor.replace(/[^\d,]/g, "").split(","); //zamienia wartość rgb(123,123,123) na [ "123", "123", "123"]
 
-	if (
-		elementColor[0] == goal[0] &&
-		elementColor[1] == goal[1] &&
-		elementColor[2] == goal[2]
-	) {
+	if (elementColor[0] == goal[0] && elementColor[1] == goal[1] && elementColor[2] == goal[2]) {
 		score++;
 		if (bgcolor1.value == "changebg") {
 			body.style.backgroundColor = e.target.style.backgroundColor;
@@ -97,12 +91,12 @@ const generate_new_game = () => {
 	text.innerHTML = `RGB: ${goal}`;
 };
 
-generate.addEventListener("click", () => {
-	if (score > 0) {
-		score--;
-		scoreText.innerHTML = `Wynik: ${score}`;
-	}
-});
+// generate.addEventListener("click", () => {
+// 	if (score > 0) {
+// 		score--;
+// 		scoreText.innerHTML = score;
+// 	}
+// });
 
 generate.addEventListener("click", generate_new_game);
 

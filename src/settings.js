@@ -11,8 +11,13 @@ const section2 = document.querySelector(".section2");
 
 const bgcolor = document.querySelector(".bgcolor");
 
-let col_input = 1;
-let row_input = 1;
+let col_input = colInput.value;
+let row_input = rowInput.value;
+
+const boxes = document.querySelectorAll(".box");
+boxes.forEach((element) => {
+	element.style.height = `${(window.innerHeight * 0.65 - 10 * row_input) / row_input}px`;
+});
 
 const openSettings = () => {
 	openSettingsBtn.style.left = "-300px";
@@ -41,16 +46,12 @@ const submitFunction = () => {
 		boxe.forEach((el) => {
 			el.remove();
 		});
-		section2.style.setProperty(
-			"grid-template-columns",
-			`repeat(${col_input},1fr)`
-		);
+		section2.style.setProperty("grid-template-columns", `repeat(${col_input},1fr)`);
 		for (let i = 1; i < col_input * row_input + 1; i++) {
 			const newBox = document.createElement("div");
 			newBox.classList.add("box");
 			section2.appendChild(newBox);
-			newBox.style.height =
-				(window.innerHeight * 0.7 - 10 * row_input) / row_input + "px";
+			newBox.style.height = (window.innerHeight * 0.65 - 10 * row_input) / row_input + "px";
 		}
 	}
 };

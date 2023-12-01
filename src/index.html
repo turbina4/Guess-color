@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+
+		<script src="main.js" defer></script>
+		<script src="settings.js" defer></script>
+		<script src="title.js" defer></script>
+
+		<title>Guess Color</title>
+		<link rel="icon" href="img/Guess color icon.png" />
+	</head>
+	<body>
+		<!--------------------------------------------------------------------------------------->
+
+		<header>
+			<span class="title">G</span><span class="title">u</span><span class="title">e</span
+			><span class="title">s</span><span class="title">s</span><span class="title">C</span
+			><span class="title">o</span><span class="title">l</span><span class="title">o</span
+			><span class="title">r</span>
+		</header>
+		<div class="autor">
+			<h3 class="title">by</h3>
+			<h3><a class="title" href="https://github.com/turbina4">@Turbina4</a></h3>
+		</div>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="section1">
+			<span class="rgb-value">Generate Colors</span>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="score">
+			<div class="score-box">
+				<ul>
+					<p>Score: <span class="score-text">0</span></p>
+					<p style="font-size: 1rem">Best score: <span class="score-best">0</span></p>
+				</ul>
+			</div>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="section2">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="section3">
+			<button class="generate">Generate</button>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<div class="settings-btn">
+			<button class="openSettingsBtn">
+				<img src="icons/settings.svg" alt="open settings button" />
+			</button>
+		</div>
+
+		<section class="settings">
+			<div class="container">
+				<h3>Settings</h3>
+				<button class="closeSettingsBtn">
+					<img src="icons/close.svg" alt="close button" />
+				</button>
+			</div>
+
+			<!-- <div class="container">
+				<label>Cols</label>
+				<input class="cols" type="range" min="1" max="10" value="3" />
+				<span class="colsn">1</span>
+			</div>
+
+			<div class="container">
+				<label>Rows</label>
+				<input class="rows" type="range" min="1" max="10" value="2" />
+				<span class="rowsn">1</span>
+			</div> -->
+
+			<div class="container">
+				<table>
+					<tr>
+						<td><label>Cols:</label></td>
+						<td><input class="cols" type="range" min="1" max="10" value="3" /></td>
+						<td><span class="colsn">1</span></td>
+					</tr>
+					<tr>
+						<td><label>Rows:</label></td>
+						<td><input class="rows" type="range" min="1" max="10" value="2" /></td>
+						<td><span class="rowsn">1</span></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="container container-center">
+				<button class="submit">Submit</button>
+			</div>
+
+			<div class="container">
+				<label>Background color</label>
+				<select class="bgcolor">
+					<option value="black">Black</option>
+					<option value="white">White</option>
+					<option value="gray">Gray</option>
+					<option value="changebg">Special</option>
+				</select>
+			</div>
+
+			<div class="container">
+				<label>Difficulty:</label>
+				<select class="difficulty">
+					<option value="easy">Easy</option>
+					<option value="medium">Medium</option>
+					<option value="hard">Hard</option>
+					<option value="very-hard">Very hard</option>
+				</select>
+			</div>
+		</section>
+
+		<!--------------------------------------------------------------------------------------->
+	</body>
+</html>
