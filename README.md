@@ -2,7 +2,7 @@
 
 ## How does the game work?
 
-You will be presented with a random RGB value (for example, `RGB(163, 69, 231)`), and your task is to select the box with the corresponding background color.
+You will be presented with a random RGB or HEX value (for example, `RGB(163, 69, 231)`), and your task is to select the box with the corresponding background color.
 
 ## Disclaimer
 
