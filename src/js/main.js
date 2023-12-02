@@ -14,9 +14,13 @@ let hex_goal;
 let difficultyValue = difficulty.value;
 let mode = "rgb";
 
-modeElement.addEventListener("change", () => {
-	mode = modeElement.value;
-});
+function rgbToHex(r, g, b) {
+	const hex_r = r.toString(16).padStart(2, "0");
+	const hex_g = g.toString(16).padStart(2, "0");
+	const hex_b = b.toString(16).padStart(2, "0");
+
+	return `#${hex_r}${hex_g}${hex_b}`.toUpperCase();
+}
 
 const check_box = (e) => {
 	const elementColor = e.target.style.backgroundColor.replace(/[^\d,]/g, "").split(","); //zamienia wartość rgb(123,123,123) na [ "123", "123", "123"]
@@ -93,14 +97,23 @@ const generate_new_game = () => {
 		el.addEventListener("click", check_box);
 	});
 
-	goal = colorList[Math.floor(Math.random() * colorList.length)];
-	hex_goal = `#${goal[0].toString(16)}${goal[1].toString(16)}${goal[2].toString(16)}`;
-
-	if (mode == "rgb") {
-		text.innerHTML = `RGB: ${goal}`;
-	} else {
-		text.innerHTML = `HEX: ${hex_goal}`;
+	function displayColor(g, h) {
+		if (mode == "rgb") {
+			text.innerHTML = `RGB: ${g}`;
+		} else {
+			text.innerHTML = `HEX: ${h}`;
+		}
 	}
+
+	goal = colorList[Math.floor(Math.random() * colorList.length)];
+	hex_goal = rgbToHex(goal[0], goal[1], goal[2]);
+
+	modeElement.addEventListener("change", () => {
+		mode = modeElement.value;
+		displayColor(goal, hex_goal);
+	});
+
+	displayColor(goal, hex_goal);
 };
 
 // generate.addEventListener("click", () => {
