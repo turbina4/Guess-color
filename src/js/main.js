@@ -6,11 +6,17 @@ const body = document.querySelector("body");
 const difficulty = document.querySelector(".difficulty");
 const bgcolor1 = document.querySelector(".bgcolor");
 const colorList = [];
-
+const modeElement = document.querySelector(".mode");
 let score = 0;
 let best = 0;
 let goal;
+let hex_goal;
 let difficultyValue = difficulty.value;
+let mode = "rgb";
+
+modeElement.addEventListener("change", () => {
+	mode = modeElement.value;
+});
 
 const check_box = (e) => {
 	const elementColor = e.target.style.backgroundColor.replace(/[^\d,]/g, "").split(","); //zamienia wartość rgb(123,123,123) na [ "123", "123", "123"]
@@ -79,6 +85,7 @@ const generate_new_game = () => {
 		}
 
 		const rgb_value = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+
 		el.style.backgroundColor = rgb_value;
 
 		colorList.push(rgb);
@@ -87,8 +94,13 @@ const generate_new_game = () => {
 	});
 
 	goal = colorList[Math.floor(Math.random() * colorList.length)];
+	hex_goal = `#${goal[0].toString(16)}${goal[1].toString(16)}${goal[2].toString(16)}`;
 
-	text.innerHTML = `RGB: ${goal}`;
+	if (mode == "rgb") {
+		text.innerHTML = `RGB: ${goal}`;
+	} else {
+		text.innerHTML = `HEX: ${hex_goal}`;
+	}
 };
 
 // generate.addEventListener("click", () => {
