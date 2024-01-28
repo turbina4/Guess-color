@@ -15,9 +15,14 @@ let col_input = colInput.value;
 let row_input = rowInput.value;
 
 const boxes = document.querySelectorAll(".box");
-boxes.forEach((element) => {
-	element.style.height = `${(window.innerHeight * 0.65 - 10 * row_input) / row_input}px`;
-});
+
+const setSize = () => {
+	boxes.forEach((element) => {
+		element.style.height = `${(window.innerHeight * 0.65 - 10 * row_input) / row_input}px`;
+	});
+};
+setSize();
+window.addEventListener("resize", () => {setSize()});
 
 const openSettings = () => {
 	openSettingsBtn.style.left = "-300px";

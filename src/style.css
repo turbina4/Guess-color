@@ -7,7 +7,6 @@
 }
 
 body {
-	background: #a8d9de;
 	font-family: "Poppins", sans-serif;
 }
 
@@ -42,6 +41,11 @@ header > span {
 		font-size: 3rem;
 	}
 }
+@media (max-width: 400px) {
+	header {
+		font-size: 2rem;
+	}
+}
 
 .section1 {
 	display: flex;
@@ -50,11 +54,9 @@ header > span {
 }
 .rgb-value {
 	font-size: 1.5rem;
-	font-weight: 900;
+	font-weight: 700;
 	padding: 0.75rem;
 	color: white;
-	background: black;
-	border: 5px solid white;
 }
 @media (max-width: 500px) {
 	.rgb-value {
@@ -63,35 +65,21 @@ header > span {
 }
 
 .score-box {
-	position: absolute;
-	border: 5px solid white;
-	background-color: black;
+	position: inherit;
 	color: white;
 	padding: 1rem 1.5rem;
-	right: 0;
-	top: 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: row;
+	font-size: 1.5rem;
+	padding: 0;
+	width: 100%;
+}
+.score {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-.score-best {
-	font-size: 1rem;
-}
-@media (max-width: 1000px) {
-	.score-box {
-		position: inherit;
-		border: none;
-		background: none;
-		font-size: 1.5rem;
-		width: 50%;
-		padding: 0;
-		width: 100%;
-	}
-	.score {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 }
 
 .section2 {
@@ -149,28 +137,20 @@ header > span {
 .submit {
 	padding: 0.25rem 1rem;
 }
-.openSettingsBtn > img,
-.closeSettingsBtn > img {
+.openSettingsBtn img,
+.closeSettingsBtn img {
 	width: 60%;
 	height: 60%;
 }
-@media (min-width: 600px) {
-	.openSettingsBtn {
-		position: absolute;
-		top: 0;
-		width: 50px;
-		height: 50px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-}
-@media (max-width: 600px) {
-	.openSettingsBtn {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-	}
+.openSettingsBtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .closeSettingsBtn {
