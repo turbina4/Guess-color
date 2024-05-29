@@ -17,63 +17,39 @@
 		<!--------------------------------------------------------------------------------------->
 
 		<header>
-			<span class="title">G</span><span class="title">u</span><span class="title">e</span
-			><span class="title">s</span><span class="title">s</span><span class="title">C</span
-			><span class="title">o</span><span class="title">l</span><span class="title">o</span
-			><span class="title">r</span>
-		</header>
-		<div class="autor">
-			<h3 class="title">by</h3>
-			<h3><a class="title" href="https://github.com/turbina4">@Turbina4</a></h3>
-		</div>
-
-		<!--------------------------------------------------------------------------------------->
-
-		<section class="section1">
-			<span class="rgb-value">Generate Colors</span>
-		</section>
-
-		<!--------------------------------------------------------------------------------------->
-
-		<section class="score">
-			<div class="score-box">
-				<p>Score: <span class="score-text">0</span></p>
-				<p>Best score: <span class="score-best">0</span></p>
+			<div class="title-box">
+				<span class="title">G</span><span class="title">u</span><span class="title">e</span
+				><span class="title">s</span><span class="title">s</span><span class="title">C</span
+				><span class="title">o</span><span class="title">l</span><span class="title">o</span
+				><span class="title">r</span>
 			</div>
+
+			<span class="rgb-value">Generate Colors</span>
+			<p class="score">Score: <span class="score-text">0</span></p>
+			<p>Best score: <span class="score-best">0</span></p>
+		</header>
+
+		<!--------------------------------------------------------------------------------------->
+
+		<section class="boxes">
+			<button class="box-button"></button>
+			<button class="box-button"></button>
+			<button class="box-button"></button>
+			<button class="box-button"></button>
+			<button class="box-button"></button>
+			<button class="box-button"></button>
 		</section>
 
 		<!--------------------------------------------------------------------------------------->
 
-		<section class="section2">
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-			<div class="box"></div>
-		</section>
-
-		<!--------------------------------------------------------------------------------------->
-
-		<section class="section3">
+		<section class="button-generate">
 			<button class="generate">Generate</button>
 		</section>
 
 		<!--------------------------------------------------------------------------------------->
 
-		<div class="settings-btn">
-			<button class="openSettingsBtn">
-				<img src="icons/settings.svg" alt="open settings button" />
-			</button>
-		</div>
-
 		<section class="settings">
-			<div class="container">
-				<h3>Settings</h3>
-				<button class="closeSettingsBtn">
-					<img src="icons/close.svg" alt="close button" />
-				</button>
-			</div>
+			<h3>Settings</h3>
 
 			<div class="container">
 				<table>
@@ -90,12 +66,8 @@
 				</table>
 			</div>
 
-			<div class="container container-center">
-				<button class="submit">Submit</button>
-			</div>
-
 			<div class="container">
-				<label>Background color</label>
+				<label>Background: </label>
 				<select class="bgcolor">
 					<option value="black">Black</option>
 					<option value="white">White</option>
@@ -120,6 +92,19 @@
 					<option value="rgb">RGB</option>
 					<option value="hex">HEX</option>
 				</select>
+			</div>
+
+			<div class="container github">
+				<a href="https://github.com/turbina4" target="_blank"
+					><img src="icons/github.svg" alt="github" />
+					<p>By @Turbina4</p>
+				</a>
+			</div>
+
+			<div class="settings-btn">
+				<button class="settingsButton">
+					<img class="settingsButtonIMG" src="icons/arrow.svg" />
+				</button>
 			</div>
 		</section>
 

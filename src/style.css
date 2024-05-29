@@ -8,190 +8,150 @@
 
 body {
 	font-family: "Poppins", sans-serif;
+	color: white;
+	height: 100vh;
 }
 
 header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 4rem;
-}
-header > span {
-	-webkit-text-stroke: 2px white;
+	display: block;
+	text-align: center;
+	height: 20%;
 }
 
-.autor {
-	display: flex;
-	justify-content: center;
-}
-.autor h3 {
-	font-size: 1.15rem;
-}
-.autor h3 a {
-	text-decoration: none;
-	cursor: pointer;
-	transition: text-decoration 0.25s;
-}
-.autor h3 a:hover {
-	text-decoration: underline white;
+header .title-box span {
+	font-size: max(2.5vw, 2rem);
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: white;
 }
 
-@media (max-width: 500px) {
-	header {
-		font-size: 3rem;
-	}
-}
-@media (max-width: 400px) {
-	header {
-		font-size: 2rem;
-	}
+header .rgb-value {
+	font-size: max(1.5vw, 1.25rem);
 }
 
-.section1 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.rgb-value {
-	font-size: 1.5rem;
-	font-weight: 700;
-	padding: 0.75rem;
-	color: white;
-}
-@media (max-width: 500px) {
-	.rgb-value {
-		font-size: 1.25rem;
-	}
+header .score {
+	font-size: max(1.25vw, 1rem);
 }
 
-.score-box {
-	position: inherit;
-	color: white;
-	padding: 1rem 1.5rem;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-direction: row;
-	font-size: 1.5rem;
-	padding: 0;
-	width: 100%;
-}
-.score {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.section2 {
+.boxes {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 10px;
-	margin: 25px;
+	width: 90%;
+	margin: 0 auto;
+	gap: 0.5rem;
+	height: 70%;
 }
-.box {
-	height: 350px;
-	border: solid 3px black;
-	color: black;
+.boxes button {
+	border: 1px solid white;
+	background: none;
+	border-radius: 5px;
 	cursor: pointer;
-	transition: 0.25s;
-	background-color: white;
+	height: auto;
+
+	transition: opacity 0.25s cubic-bezier(0.215, 0.61, 0.355, 1),
+		transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1),
+		background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.box:hover {
-	transform: scale(0.98);
+.boxes button:hover {
+	transform: scale(0.95);
 }
 
-.section3 {
-	margin: 1rem;
+
+.button-generate {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	height: 10%;
 }
-.generate {
-	width: 10rem;
-	height: 3rem;
-	font-size: 1.5rem;
-	background-color: white;
+.button-generate .generate {
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	color: white;
+	background-color: #ef2f2f;
+	border: 1px solid #9e1313;
 	border-radius: 10px;
 	cursor: pointer;
-	border: 2px solid black;
-	font-weight: 700;
-	box-shadow: 0 0 15px white;
-	transition: transform 0.25s, box-shadow 0.25s;
+
+	transition: background-color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1),
+		transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.generate:hover {
-	transform: scale(0.98);
-	box-shadow: 0 0 25px green;
-}
-.openSettingsBtn,
-.closeSettingsBtn,
-.submit {
-	font-size: 1.5rem;
-	background-color: white;
-	border-radius: 10px;
-	border: 2px solid black;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.submit {
-	padding: 0.25rem 1rem;
-}
-.openSettingsBtn img,
-.closeSettingsBtn img {
-	width: 60%;
-	height: 60%;
-}
-.openSettingsBtn {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50px;
-	height: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.button-generate .generate:hover {
+	background-color: #ff0000;
+	transform: scale(0.95);
 }
 
-.closeSettingsBtn {
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
 .settings {
 	position: absolute;
 	width: 300px;
 	left: -300px;
 	top: 0;
-	transition: 0.25s;
+	transition: left 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 	background-image: url(img/woodbg.png);
+
 	height: 100vh;
 	color: white;
-	border: 3px #231709 solid;
+	border: 1px #231709 solid;
 	display: flex;
 	flex-direction: column;
+	padding: 0 0.5rem;
+	gap: 1rem;
 }
-.settings .container {
-	padding: 0.5rem 0.25rem;
-	margin: 0 0.25rem;
-}
-.container-center {
+.settings .settingsButton {
+	position: absolute;
+	top: 0;
+	right: -25px;
+	width: 25px;
+	height: 75px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+	cursor: pointer;
+	font-size: 1.25rem;
+	font-weight: 500;
+	cursor: pointer;
+	border: none;
+}
+.settings .settingsButton img {
+	width: auto;
+	height: 50%;
+	object-fit: cover;
+
+	transition: rotate 0.5s ease;
+}
+
+.settingsButtonActiveIMG {
+	rotate: 180deg;
+}
+
+.settings .container {
+	display: flex;
+}
+
+.settings h3 {
+	text-align: center;
+	font-weight: 300;
+	font-size: 2.5rem;
+}
+
+.settings .container label {
+	width: 50%;
+	font-size: 1.25rem;
+	margin: auto 0;
 }
 .container table {
 	width: 100%;
 }
-.container td:nth-child(3) {
-	width: 1.75rem;
+
+.container td:nth-child(3),
+.container td:nth-child(1) {
+	width: 20%;
 	text-align: center;
 }
-.settings h3 {
-	font-size: 2rem;
+.container td:nth-child(2) {
+	margin: auto 0;
 }
+
 .settings input[type="range"] {
 	width: 100%;
 }
@@ -205,7 +165,26 @@ header > span {
 	font-size: 1rem;
 	font-weight: 700;
 }
-.settings label,
 .settings span {
 	font-size: 1.5rem;
+}
+
+.settings .github {
+	position: absolute;
+	bottom: 1rem;
+}
+.settings .github a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	color: white;
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+.settings .github a:hover {
+	text-decoration: underline;
+}
+.settings .github img {
+	width: 50px;
 }

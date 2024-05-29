@@ -23,7 +23,7 @@ function rgbToHex(r, g, b) {
 }
 
 const check_box = (e) => {
-	const elementColor = e.target.style.backgroundColor.replace(/[^\d,]/g, "").split(","); //zamienia wartość rgb(123,123,123) na [ "123", "123", "123"]
+	const elementColor = e.target.style.backgroundColor.replace(/[^\d,]/g, "").split(",");
 
 	if (elementColor[0] == goal[0] && elementColor[1] == goal[1] && elementColor[2] == goal[2]) {
 		score++;
@@ -46,7 +46,7 @@ const check_box = (e) => {
 
 const generate_new_game = () => {
 	colorList.splice(0, colorList.length);
-	const box = document.querySelectorAll(".box");
+	const box = document.querySelectorAll(".box-button");
 	const randVal = Math.floor(Math.random() * 3);
 	const randVal255 = Math.floor(Math.random() * 255);
 	box.forEach((el) => {

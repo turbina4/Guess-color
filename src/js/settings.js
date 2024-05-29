@@ -1,62 +1,55 @@
-const openSettingsBtn = document.querySelector(".openSettingsBtn");
-const closeSettingsBtn = document.querySelector(".closeSettingsBtn");
+const settingsButton = document.querySelector(".settingsButton");
+const settingsButtonIMG = document.querySelector(".settingsButtonIMG");
 const settings = document.querySelector(".settings");
+
+const gameSection = document.querySelector(".boxes");
+
+const bgcolor = document.querySelector(".bgcolor");
 
 const colInput = document.querySelector(".cols");
 const colText = document.querySelector(".colsn");
 const rowInput = document.querySelector(".rows");
 const rowText = document.querySelector(".rowsn");
-const submit = document.querySelector(".submit");
-const section2 = document.querySelector(".section2");
-
-const bgcolor = document.querySelector(".bgcolor");
 
 let col_input = colInput.value;
 let row_input = rowInput.value;
 
-const boxes = document.querySelectorAll(".box");
-
-const setSize = () => {
-	boxes.forEach((element) => {
-		element.style.height = `${(window.innerHeight * 0.65 - 10 * row_input) / row_input}px`;
-	});
-};
-setSize();
-window.addEventListener("resize", () => {setSize()});
-
 const openSettings = () => {
-	openSettingsBtn.style.left = "-300px";
-	settings.style.left = "0px";
-	settings.style.height = `${document.documentElement.scrollHeight}px`;
-};
-const closeSettings = () => {
-	openSettingsBtn.style.left = "0px";
-	settings.style.left = "-300px";
+	if (settings.style.left == "-300px") {
+		settings.style.left = "0px";
+		settingsButtonIMG.classList.add("settingsButtonActiveIMG");
+	} else {
+		settings.style.left = "-300px";
+		settingsButtonIMG.classList.remove("settingsButtonActiveIMG");
+	}
 };
 
 colText.innerHTML = colInput.value;
 rowText.innerHTML = rowInput.value;
+
 colInput.addEventListener("input", (el) => {
 	colText.innerHTML = el.target.value;
-});
-rowInput.addEventListener("input", (el) => {
-	rowText.innerHTML = el.target.value;
+	col_input = colInput.value;
+	generateNew();
 });
 
-const submitFunction = () => {
+rowInput.addEventListener("input", (el) => {
+	rowText.innerHTML = el.target.value;
 	row_input = rowInput.value;
-	col_input = colInput.value;
+	generateNew();
+});
+
+const generateNew = () => {
 	if (col_input != 1 || row_input != 1) {
-		const boxe = document.querySelectorAll(".box");
-		boxe.forEach((el) => {
+		const boxes = document.querySelectorAll(".box-button");
+		boxes.forEach((el) => {
 			el.remove();
 		});
-		section2.style.setProperty("grid-template-columns", `repeat(${col_input},1fr)`);
-		for (let i = 1; i < col_input * row_input + 1; i++) {
-			const newBox = document.createElement("div");
-			newBox.classList.add("box");
-			section2.appendChild(newBox);
-			newBox.style.height = (window.innerHeight * 0.65 - 10 * row_input) / row_input + "px";
+		gameSection.style.setProperty("grid-template-columns", `repeat(${col_input},1fr)`);
+		for (let i = 0; i < col_input * row_input; i++) {
+			const newButton = document.createElement("button");
+			newButton.classList.add("box-button");
+			gameSection.appendChild(newButton);
 		}
 	}
 };
@@ -67,8 +60,7 @@ const changeBgInput = () => {
 	}
 };
 
-openSettingsBtn.addEventListener("click", openSettings);
-closeSettingsBtn.addEventListener("click", closeSettings);
-submit.addEventListener("click", submitFunction);
-changeBgInput();
+settingsButton.addEventListener("click", openSettings);
 bgcolor.addEventListener("change", changeBgInput);
+
+changeBgInput();
