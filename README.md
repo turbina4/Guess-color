@@ -1,9 +1,7 @@
-# Guess the Color Game (work in progress)
+# Guess the Color Game
 
 ## How does the game work?
 
-You will be presented with a random RGB or HEX value (for example, `RGB(163, 69, 231)`), and your task is to select the box with the corresponding background color.
+Guess Color is a web-based game where players have to guess the correct color based on various color representations like RGB or HEX values. It offers different difficulty levels and customization options for an enhanced gaming experience.
 
-## Disclaimer
-
-Please note that if you change the resolution or size of your window, you will need to generate new boxes.
+![Guess Color Website](src/img/game.png)
